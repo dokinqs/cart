@@ -1,0 +1,18 @@
+.cart-items {
+  background-color: #ede6de;
+  padding: 10px;
+  height: 100vh;
+}
+.cart-items-header {
+  font-size: 2rem;
+}
+.cart-items-container {
+  margin: 20px auto;
+  background-color: white;
+  width: 70vw;
+  padding: 20px;
+}
+.cart-item-image {
+  width: 100px;
+  height: 100px;
+}

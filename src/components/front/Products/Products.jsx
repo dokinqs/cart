@@ -1,11 +1,11 @@
 import React from 'react';
 import './Products.css';
 
-const Products = ({ productItems }) => {
+const Products = ({ pItems, handleAdd }) => {
   return (
     <div className='products'>
 
-      {productItems.map((productItem) => (
+      {pItems.map((productItem) => (
         <div className='card' key={productItem.id}>
           <div>
             <img className="product-img" src={productItem.image} alt={productItem.name} />
@@ -15,6 +15,9 @@ const Products = ({ productItems }) => {
           </div>
           <div>
             <h4 className='product-price'>${productItem.price}</h4>
+          </div>
+          <div>
+            <button className='product-add' onClick={() => handleAdd(productItem)}>Add to Cart</button>
           </div>
         </div>
       ))}
