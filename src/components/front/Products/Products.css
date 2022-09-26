@@ -6,5 +6,9 @@
 
 .card {
   display: inline-block;
-  padding: 10px;
+  padding: 20px;
+}
+
+.product-add {
+  padding: 5px;
 }

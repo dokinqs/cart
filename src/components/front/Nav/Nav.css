@@ -1,18 +1,19 @@
 .nav {
   position: sticky;
   top: 0;
-  background-color: #ccc;
+  background-color: #000;
   min-height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
-
+.nav a {
+    color: #ccc;
+}
 .nav-links li {
   display: inline-block;
 }
-
 .nav-links li a {
   padding: 0 10px;
 }

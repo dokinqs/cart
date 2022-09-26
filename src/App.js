@@ -11,11 +11,29 @@ const App = () => {
   const [ cartItems, setCartItems ] = useState([]);
 
   const handleAdd = (prod) => {
-    const addedAlready = cartItems.find((item) => item.id === prod.id);
-    if (addedAlready) {
-      setCartItems(cartItems.map((item) => item.id === prod.id ? { ...addedAlready, quantity: addedAlready.quantity + 1 } : item ));
+    const prodExists = cartItems.find((item) => item.id === prod.id);
+    if (prodExists) {
+      setCartItems(cartItems.map((item) => item.id === prod.id ? { ...prodExists, quantity: prodExists.quantity + 1 } : item ));
     } else {
       setCartItems([ ...cartItems, { ...prod, quantity : 1 } ]);
+    }
+  }
+
+  const removed = (prod) => {
+    document.getElementById('removed-alert').innerHTML = `${prod.name} was removed.`;
+  }
+
+  const handleRemove = (prod) => {
+    const prodExists = cartItems.find((item) => item.id === prod.id);
+    if (prodExists.quantity === 1) {
+      setCartItems(cartItems.filter((item) => item.id !== prod.id));
+      // console.log(`${prod.name} was removed.`);
+      removed(prod);
+    } else {
+      setCartItems(cartItems.map((item) => item.id === prod.id 
+      ? { ...prodExists, quantity: prodExists.quantity - 1 } 
+      : item
+      ));
     }
   }
 
@@ -23,7 +41,12 @@ const App = () => {
     <div>
       <Router>
         <Nav />
-        <Paths prodItems={productItems} cartItems={cartItems} handleAdd={handleAdd}/>
+        <Paths 
+          prodItems={productItems} 
+          cartItems={cartItems} 
+          handleAdd={handleAdd}
+          handleRemove={handleRemove}
+        />
       </Router>
     </div>
   )
