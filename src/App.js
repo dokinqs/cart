@@ -19,22 +19,26 @@ const App = () => {
     }
   }
 
-  const removed = (prod) => {
+  const removedAlert = (prod) => {
     document.getElementById('removed-alert').innerHTML = `${prod.name} was removed.`;
   }
 
-  const handleRemove = (prod) => {
+  const handleSubtract = (prod) => {
     const prodExists = cartItems.find((item) => item.id === prod.id);
     if (prodExists.quantity === 1) {
       setCartItems(cartItems.filter((item) => item.id !== prod.id));
-      // console.log(`${prod.name} was removed.`);
-      removed(prod);
+      removedAlert(prod);
     } else {
       setCartItems(cartItems.map((item) => item.id === prod.id 
       ? { ...prodExists, quantity: prodExists.quantity - 1 } 
       : item
       ));
     }
+  }
+
+  const handleDelete = (prod) => {
+    setCartItems(cartItems.filter((item) => item.id !== prod.id));
+    removedAlert(prod);
   }
 
   return (
@@ -45,7 +49,8 @@ const App = () => {
           prodItems={productItems} 
           cartItems={cartItems} 
           handleAdd={handleAdd}
-          handleRemove={handleRemove}
+          handleSubtract={handleSubtract}
+          handleDelete={handleDelete}
         />
       </Router>
     </div>

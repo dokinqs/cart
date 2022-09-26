@@ -1,7 +1,7 @@
 import React from 'react';
 import './Cart.css';
 
-const Cart = ({ cItems, handleAdd, handleRemove }) => {
+const Cart = ({ cItems, handleAdd, handleSubtract, handleDelete }) => {
   return (
     <div className='cart-items'>
       <div className='cart-items-header'>Shopping Cart Items</div>
@@ -9,8 +9,25 @@ const Cart = ({ cItems, handleAdd, handleRemove }) => {
       <div id='removed-alert'></div>
 
       {cItems.length === 0 && (
-        <div className='cart-items-empty'>No items in cart.</div>
+        <div className='cart-items-empty'>
+          <b>Your shopping cart is empty</b>
+          <br />
+          <a href="/">Shop Now</a>
+          <br />
+          <a href="login">
+            <button className='login'>
+              Log In
+            </button>
+          </a>
+        </div>
       )}
+
+      <div className='checkout'>
+        <span className='sc-items'>Total (X Items): </span>
+        <span className='sc-total'><b>$XX.XX</b></span>
+        <br />
+        <button className='checkout-btn'>Checkout</button>
+      </div>
 
       <div className='cart-items-container'>
 
@@ -37,18 +54,22 @@ const Cart = ({ cItems, handleAdd, handleRemove }) => {
               >+</button>
               <button 
                 className='cart-item-remove' 
-                onClick={() => handleRemove(item)}
+                onClick={() => handleSubtract(item)}
               >-</button>
+              <button 
+                className='cart-item-delete' 
+                onClick={() => handleDelete(item)}
+              >Delete</button>
             </div>
           </div>
         ))}
 
-        {/* <div className='total'>Total: </div> */}
+        <div className='total'>
+          <span className='sc-items'>Total (X Items): </span>
+          <span className='sc-total'><b>$XX.XX</b></span>
+        </div>
       </div>
       
-      <div className='checkout'>
-        <button className='checkout-btn'>Checkout</button>
-      </div>
     </div>
   )
 }

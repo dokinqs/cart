@@ -12,6 +12,9 @@ img {
   width: 300px;
   height: 300px;
 }
+a {
+  color: rgb(72, 137, 195);
+}
 a:hover, button:hover {
   cursor: pointer;
 }

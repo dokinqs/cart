@@ -4,7 +4,7 @@ import Login from "../Login/Login";
 import Cart from "../Cart/Cart";
 import { Route, Routes } from "react-router-dom";
 
-const Paths = ({ prodItems, cartItems, handleAdd, handleRemove }) => {
+const Paths = ({ prodItems, cartItems, handleAdd, handleSubtract, handleDelete }) => {
   return (
     <div>
       <Routes>
@@ -21,7 +21,9 @@ const Paths = ({ prodItems, cartItems, handleAdd, handleRemove }) => {
           element={<Cart 
             cItems={cartItems} 
             handleAdd={handleAdd} 
-            handleRemove={handleRemove} />}
+            handleSubtract={handleSubtract} 
+            handleDelete={handleDelete}
+          />}
         ></Route>
       </Routes>
     </div>
