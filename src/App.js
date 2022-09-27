@@ -33,14 +33,14 @@ const App = () => {
     if (prodExists.quantity === 1) {
       setCartItems(cartItems.filter((item) => item.id !== prod.id));
       removedAlert(prod);
-      totalItems--
+      totalItems--;
       setTotalItems(totalItems);
     } else {
       setCartItems(cartItems.map((item) => item.id === prod.id 
       ? { ...prodExists, quantity: prodExists.quantity - 1 } 
       : item
       ));
-      totalItems--
+      totalItems--;
       setTotalItems(totalItems);
     }
   }

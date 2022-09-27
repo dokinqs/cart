@@ -32,8 +32,15 @@
   float: none;
 }
 
+.cart-items-empty {
+  background-color: white;
+  width: 370px;
+  max-width: 100%;
+  padding: 20px;
+}
+
 .cart-items-empty .login {
-  padding: 4px;
+  padding: 4px 8px;
 }
 
 .cart-item-list {
@@ -71,5 +78,9 @@
 @media only screen and (max-width: 770px) {
   .checkout {
     float: none;
+    width: 80vw;
+  }
+  .cart-items-container {
+    width: 80vw;
   }
 }
