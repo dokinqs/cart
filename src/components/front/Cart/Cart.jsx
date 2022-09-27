@@ -30,7 +30,11 @@ const Cart = ({ cItems, handleAdd, handleSubtract, handleDelete, totalItems }) =
           <span className='sc-items'>Total ({totalItems} items) : </span>
           <span className='sc-total'><b>${totalPrice}</b></span>
           <br />
-          <button className='checkout-btn'>Checkout</button>
+          <button 
+          className='checkout-btn' 
+          onClick={() => window.location = '/'}
+          >Checkout
+          </button>
         </div>
       )}
 
@@ -74,6 +78,7 @@ const Cart = ({ cItems, handleAdd, handleSubtract, handleDelete, totalItems }) =
             <span className='sc-total-items'>Total ({totalItems} items) : </span>
             <span className='sc-total-price'><b>${totalPrice}</b></span>
           </div>
+          
         </div>
       )}
     </div>

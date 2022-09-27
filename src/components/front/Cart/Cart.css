@@ -5,6 +5,7 @@
 }
 .cart-items-header {
   font-size: 2rem;
+  margin: 20px;
 }
 
 
@@ -21,6 +22,7 @@
   padding: 10px 20px;
   background-color: #000;
   color: white;
+  width: 100%;
 }
 
 
@@ -37,6 +39,9 @@
   width: 370px;
   max-width: 100%;
   padding: 20px;
+}
+.cart-items-empty a {
+  color: #4889c3;
 }
 
 .cart-items-empty .login {
@@ -68,14 +73,20 @@
 #removed-alert {
   background-color: #f0e9e9;
   padding: 20px;
+  display: none;
+  /* display: block; */
 }
 
 .total-container {
   text-align: right;
+  padding: 10px;
 }
 
 
 @media only screen and (max-width: 770px) {
+  .cart-items-header {
+    font-size: 1.5rem;
+  }
   .checkout {
     float: none;
     width: 80vw;

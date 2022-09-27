@@ -25,6 +25,7 @@ const App = () => {
   }
 
   const removedAlert = (prod) => {
+    document.getElementById('removed-alert').style.display = "block"; 
     document.getElementById('removed-alert').innerHTML = `${prod.name} was removed.`;
   }
 
