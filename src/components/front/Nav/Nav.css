@@ -17,3 +17,9 @@
 .nav-links li a {
   padding: 0 10px;
 }
+
+.cart-count {
+  /* font-size: 8px; */
+  color: red;
+  vertical-align: super;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import "./Nav.css";
 
-const Nav = () => {
+const Nav = ({ cartItems, totalItems }) => {
   return (
     <header className='nav'>
       <div>
@@ -16,7 +16,11 @@ const Nav = () => {
             <Link to="/login">Login</Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">
+              Cart
+              <span className='cart-count'>{totalItems}</span>
+            </Link>
+            
           </li>
         </ul>
       </div>

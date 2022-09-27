@@ -1,7 +1,10 @@
 import React from 'react';
 import './Cart.css';
 
-const Cart = ({ cItems, handleAdd, handleSubtract, handleDelete }) => {
+const Cart = ({ cItems, handleAdd, handleSubtract, handleDelete, totalItems }) => {
+
+  const totalPrice = cItems.reduce((total, item) => total + (item.quantity * item.price), 0);
+
   return (
     <div className='cart-items'>
       <div className='cart-items-header'>Shopping Cart Items</div>
@@ -23,8 +26,8 @@ const Cart = ({ cItems, handleAdd, handleSubtract, handleDelete }) => {
       )}
 
       <div className='checkout'>
-        <span className='sc-items'>Total (X Items): </span>
-        <span className='sc-total'><b>$XX.XX</b></span>
+        <span className='sc-items'>Total ({totalItems} items) : </span>
+        <span className='sc-total'><b>${totalPrice}</b></span>
         <br />
         <button className='checkout-btn'>Checkout</button>
       </div>
@@ -64,9 +67,9 @@ const Cart = ({ cItems, handleAdd, handleSubtract, handleDelete }) => {
           </div>
         ))}
 
-        <div className='total'>
-          <span className='sc-items'>Total (X Items): </span>
-          <span className='sc-total'><b>$XX.XX</b></span>
+        <div className='total-container'>
+          <span className='sc-total-items'>Total ({totalItems} items) : </span>
+          <span className='sc-total-price'><b>${totalPrice}</b></span>
         </div>
       </div>
       

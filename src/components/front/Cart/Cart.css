@@ -1,5 +1,5 @@
 .cart-items {
-  background-color: #ddd;
+  background-color: #f5f5f5;
   padding: 20px;
   min-height: 100vh;
 }
@@ -63,7 +63,7 @@
   padding: 20px;
 }
 
-.total {
+.total-container {
   text-align: right;
 }
 
